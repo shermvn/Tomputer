@@ -3,7 +3,7 @@ d2 $ s "[mt mt ~]*0.8" # gain 0.7 #pan 1 #room 0.1 #sz 0.5
 d3 $ s "[ht lt ht mt]*3" # gain 0.5 # speed 1 # pan 0.7 #room 0.5 #sz 0.5
 -- play with speed
 d4 $ s "lt" # speed 0.5 # gain 0.7 # pan 0.5 # octersubsub 1
-once $ s "lt*8" # speed ((sine/saw)-7) # gain 0.7 #room 0.7 #sz 0.5
+d4 $ s "lt*8" # speed (sine+6) # gain 0.6 #room 0.7 #sz 0.5
 d4 silence
 d11 $ s "[[[ht ~ lt ~]*2]][[ht mt ~ [ht*3]][~ mt lt mt](1,1)] * 0.5" # gain 0.8 # speed 0.5 # pan 0.5 
 
@@ -66,10 +66,10 @@ d11 $ palindrome $ s "lt*4" # gain 0.9 # speed 0.5 # pan sine # octersubsub 1
 d8 $ s "[[lt ~ ~ ~] ~ [lt ht mt lt][~ ~ lt lt] ~ [lt ht mt lt]]* 0.5" #speed 1 # gain 0.7 # pan 0.1 #room 0.1 #sz 0.5
 d5 $ s "lt ~ lt ~ ~ [lt*2] " #speed 5 # gain 0.6 # pan 0.4
 
-once $ s "ht ~ ~ ~ [ht*2] ~ ~ ~ ht ~ ~ ~ ~ ~ ~ ~" # gain 0.6 # pan square # speed (sine + 0.5) #room 1 #sz 0.7 
+once $ s "ht ~ ~ ~ [ht*2] ~ ~ ~ ht ~ ~ ~ ~ ~ ~ ~" # gain 0.8 # pan square # speed (sine + 4) #room 1 #sz 0.9 
 - trigger on th and of $
 
-once $ s "ht ~ ~ ~ [ht*2] ~ ~ ~ ht ~ ~ ~ ~ ~ ~ ~" # gain 0.9 # pan square # speed (sine - 2) #room 1 #sz 0.7 
+once $ s "ht ~ ~ ~ [ht*2] ~ ~ ~ ht ~ ~ ~ ~ ~ ~ ~" # gain 0.8 # pan square # speed (sine - 4) #room 1 #sz 0.7 
 
 #distort 0.5
 d2 $ s "[mt mt ~][mt mt ~][~][~]" # gain 0.7 # speed 2 #pan 0.1 #octer 1 #room 0.2 #sz 0.5 
@@ -79,13 +79,9 @@ d5 $ s "[ ~][~][ ~][mt mt lt]" # gain 0.7 # speed 1 #pan sine #room 0.1 #sz 0.5
 d7 $ s "[~ ht ~ ht]" # gain 1 # speed 9 #pan 0.9 #room 0.1 #sz 0.5
 
 d11 $ palindrome $ s "[[[ht mt lt mt]*2]][[ht mt ~ [ht*3]][~ mt lt mt](1,1)] * 0.5" # gain 0.8 # speed 0.7 # pan (sine+0.3) #room 0.1 #sz 0.5
-
-
-once $ s "[mt mt ~][mt mt ~][~][~]" # gain 0.7 # speed 2 #pan 0.2 #octer 1 #room 0.2 #sz 0.5 
-once $ s "[ ~][~][lt lt ~][lt lt ~]" # gain 0.7 # speed 2 #pan 0.8 #room 0.1 #sz 0.5
-d4 $ s "lt*16" # gain 0.5 # speed 0.1 #pan ((sine*0.2)+0.8) #room 0.5 #sz 0.7
-d4 $ s "lt*16" # gain 0.4 # speed 0.1 #pan ((sine*0.2)+0.5) #room 1 #sz 0.7
-d4 $ s "lt*16" # gain 0.5 # speed 0.1 #pan ((sine*0.2)+0.2) #room 0.5 #sz 0.7
+hush
 
 
 once $ s "[[lt lt]*3] ~ ~ ~" # gain 0.7 # speed 1 #pan (sine*4) #room 0.1 #sz 0.5
+
+panic

@@ -13,5 +13,5 @@ s.waitForBoot{
 
 );
 
-s.Record(numChannels:10);
+s.record(numChannels:10);
 s.stopRecording;
