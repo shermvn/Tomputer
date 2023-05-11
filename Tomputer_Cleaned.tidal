@@ -58,10 +58,17 @@ d9 $ s "lt*16" # speed ((sine/saw)) # pan ((sine/saw)) # gain 1
 d6 $ s "lt*8" #speed 1 # pan ((sine/saw)) # gain 0.7 
 
 
-
-
-
-
-
 hush
 d6 silence
+
+--Test:
+d4 $ palindrome $ s "[[[ht mt lt mt]*2]][[ht mt ~ [ht*3]][~ mt lt mt](1,1)] * 0.5" # gain 0.7 # speed 0.5 # pan sine # octer 1 #room 0.1 #sz 0.5
+once $ s "lt*16" # speed ((sine/saw)*8) # pan ((sine/saw)*8) # gain 1
+
+d2 $ s "[mt mt ~][mt mt ~][~][~]" # gain 0.7 # speed 2 #pan 0.3 #octer 1 #room 0.2 #sz 0.5 #distort 0.5
+d3 $ s "[ ~][~][lt lt ~][lt lt ~]" # gain 0.7 # speed 1 #pan 0.1 #room 0.2 #sz 0.5
+d5 $ s "[ ~][~][mt mt ~][mt ~ mt]" # gain 0.7 # speed 2 #pan 0.8 #room 0.1 #sz 0.5
+d5 $ s "[ ~][~][ ~][mt mt lt]" # gain 0.7 # speed 1 #pan sine #room 0.1 #sz 0.5
+d7 $ s "[~ ht ~ ht]" # gain 0.8 # speed 9 #pan 0.9 #room 0.6 #sz 0.5
+d11 $ palindrome $ s "lt*4" # gain 0.9 # speed 0.5 # pan sine # octersubsub 1 
+

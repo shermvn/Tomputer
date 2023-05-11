@@ -85,3 +85,5 @@ hush
 once $ s "[[lt lt]*3] ~ ~ ~" # gain 0.7 # speed 1 #pan (sine*4) #room 0.1 #sz 0.5
 
 panic
+
+
