@@ -1,39 +1,40 @@
-once $ s "[mt mt ~][mt mt ~][~][~]" # gain 0.7 # speed 2 #pan 0.2 #octer 1 #room 0.2 #sz 0.5 
+once $ s "[mt mt ~][mt mt ~][~][~]" # gain 0.7 # speed 2 #pan 0.2 #octer 1 #room 0.5 #sz 0.5 
 once $ s "[ ~][~][lt lt ~][lt lt ~]" # gain 0.7 # speed 2 #pan 0.8 #room 0.1 #sz 0.5
-once $ s "[[lt lt]*3] ~ ~ ~" # gain 0.7 # speed 1 #pan (sine*4) #room 0.1 #sz 0.5
+once $ s "[[lt lt]*3] ~ ~ ~" # gain 0.7 # speed 1 #pan (sine*4) #room 0.4 #sz 0.5
 
 -- Droney
 d4 $ s "lt*16" # gain 0.5 # speed 0.1 #pan ((sine*0.2)+0.8) #room 0.5 #sz 0.7
-d4 $ s "lt*16" # gain 0.4 # speed 0.1 #pan ((sine*0.2)+0.5) #room 1 #sz 0.7
+d4 $ s "lt*32" # gain 0.7 # speed 0.01 #pan ((sine*0.2)+0.5) #room 1 #sz 0.7
 d4 $ s "lt*16" # gain 0.5 # speed 0.1 #pan ((sine*0.2)+0.2) #room 0.5 #sz 0.7
 
 --Call and Response
-d2 $ s "[mt mt ~][mt mt ~][~][~]" # gain 0.7 # speed 2 #pan 0.1 #octer 1 #room 0.2 #sz 0.5 
-d3 $ s "[ ~][~][lt lt ~][lt lt ~]" # gain 0.7 # speed 2 #pan 1 #room 0.1 #sz 0.5
-d5 $ s "[ ~][~][mt mt ~][mt ~ mt]" # gain 0.7 # speed 1 #pan 8 #room 0.1 #sz 0.5
+d2 $ s "[mt mt ~][mt mt ~][~][~]" # gain 0.7 # speed 2 #pan 0.3 #octer 1 #room 0.2 #sz 0.5 #distort 0.5
+d3 $ s "[ ~][~][lt lt ~][lt lt ~]" # gain 0.7 # speed 1 #pan 0.1 #room 0.2 #sz 0.5
+d5 $ s "[ ~][~][mt mt ~][mt ~ mt]" # gain 0.7 # speed 2 #pan 0.8 #room 0.1 #sz 0.5
 d5 $ s "[ ~][~][ ~][mt mt lt]" # gain 0.7 # speed 1 #pan sine #room 0.1 #sz 0.5
-d7 $ s "[~ ht ~ ht]" # gain 1 # speed 9 #pan 0.9 #room 0.1 #sz 0.5
+d7 $ s "[~ ht ~ ht]" # gain 0.8 # speed 9 #pan 0.9 #room 0.6 #sz 0.5
 
 
-d1 $ s "[ht ht ht ht [ht*2] ht]" # gain 0.6 # pan 0.2 #room 0.1 #sz 0.5
+d1 $ s "[ht ht ht ht [ht*2] ht]" # gain 0.7 # pan 0.2 #room 0.1 #sz 0.5
 d6 $ s "~ ~ [~ mt] ~"  #speed 1 # gain 0.7 # pan 0.9
 d7 $ s "lt ~ [mt ~ ht](2,6)"  # gain 0.6 # pan 0.6 #room 0.1 #sz 0.5
+-breakdown
 d2 $ s "[mt mt ~]*0.8" # gain 0.7 #pan 1 #room 0.1 #sz 0.5
-d3 $ s "[ht lt ht mt]*3" # gain 0.5 # speed 1 # pan 0.7 #room 0.5 #sz 0.5
+d3 $ s "[ht lt ht mt]*3" # gain 0.6 # speed 1 # pan 0.7 #room 0.5 #sz 0.5
 d5 $ s "lt ~ lt ~ ~ [lt*2] " #speed 5 # gain 0.6 # pan 0.4
-d8  $ fast "1 2" $ s "[[lt ~ ~ ~] ~ [lt ht mt lt][~ ~ lt lt] ~ [lt ht mt lt]]* 0.5" #speed 1 # gain 0.7 # pan 0.1 #room 0.1 #sz 0.5
+d8  $ fast "1 2" $ s "[[lt ~ ~ ~] ~ [lt ht mt lt][~ ~ lt lt] ~ [lt ht mt lt]]* 0.5" #speed 1 # gain 0.7 # pan 0.8 #room 0.1 #sz 0.5
 
 
+d7 silence
+hush
+d4 $ s "lt" # speed 0.5 # gain 0.9 # pan (sine+rand) # octersubsub 1
 
-
-d4 $ s "lt" # speed 0.5 # gain 0.8 # pan (sine+rand) # octersubsub 1
-
-d11 $ s "[[[ht ~ lt ~]*2]][[ht mt ~ [ht*3]][~ mt lt mt](1,1)] * 0.5" # gain 0.8 # speed 0.5 # pan (sine*0.5) 
+d11 $ s "[[[ht ~ lt ~]*2]][[ht mt ~ [ht*3]][~ mt lt mt](1,1)] * 0.5" # gain 0.9 # speed 9 # pan (sine*0.5) #room (sine-1) #sz 0.5 
 
 d4 silence
 d11 silence
 
-d4 $ s "~ ~ lt lt" # gain 0.8 # speed 0.5  #octersubsub 1 # pan saw
+d4 $ s "~ ~ lt lt" # gain 0.9 # speed 0.5  #octersubsub 1 # pan saw
 d11 $ s "ht ~ ~ ~ <[ht*10] ~ ~ ~>" # gain 0.6 # speed 5 # pan saw #room 1 #sz 0.5
 d11 $ s "ht ~ ~ ~ <[ht*10] ~ ~ ~>" # gain 0.6 # pan square # speed (sine + 0.5) #room 1 #sz 0.5 
 
@@ -49,4 +50,8 @@ d3 $ s "[ht lt ht mt]*3" # gain 0.5 # speed (sine+2) # pan 0.7 #room 0.5 #sz 0.5
 
 d6 $ s "lt*8" #speed 1 # pan ((sine/saw)) # gain 0.7 
 
-once $ s "lt*8" # speed ((sine/saw)) # gain 0.7 
+once $ s "lt*16" # speed ((sine/saw)) # pan ((sine/saw)) # gain 1
+
+once $ s "lt*16" # speed ((sine/saw)*8) # pan ((sine/saw)*8) # gain 1
+
+d6 silence
