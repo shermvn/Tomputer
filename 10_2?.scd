@@ -1,5 +1,5 @@
 (
-s.options.outDevice_("Dante Virtual Soundcard"); //switch to
+s.options.outDevice_("BlackHole 64ch"); //switch to
 s.options.numBuffers = 1024 * 256;
 s.options.memSize = 8192 * 32;
 s.options.maxNodes = 1024 * 34;
